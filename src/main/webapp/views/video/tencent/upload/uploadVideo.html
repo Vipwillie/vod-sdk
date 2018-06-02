@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:include="/commons/head :: common_head"></head>
+    <head>
+        <title>上传文件</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/static/js/uploader/css/webuploader.css}" />
+        <link rel="stylesheet" type="text/css" th:href="@{/static/js/uploader/css/style.css}" />
+        <style type="text/css">
+            .btns{
+                line-height: 59px;
+            }
+            .ctlBtn{
+                height: 40px;
+            }
+        </style>
+    </head>
+    <body class="container">
+        <div id="wrapper"></div>
+        <script type="text/javascript" th:src="@{/static/js/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{/static/js/uploader/js/webuploader.js}"></script>
+        <script type="text/javascript" th:src="@{/static/js/uploader/js/upload.js}"></script>
+        <script type="text/javascript">
+            $(function () {
+                $("#wrapper").upload({
+                    muiltFileUpload: true,
+                    swf: "/static/js/uploader/js/Uploader.swf",
+                    server: "/video/videos"
+                });
+            })
+        </script>
+    </body>
+</html>
